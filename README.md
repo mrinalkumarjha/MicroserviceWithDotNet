@@ -22,6 +22,12 @@
 ![image](https://user-images.githubusercontent.com/3676282/135683643-994e1184-8352-4690-935c-613e43d86797.png)
 
 
+# Install mogo db nuget packge(MongoDB.Driver version 2.13) into catalog api to connect to mongo db
+
+
+
+
+
 
 
 
