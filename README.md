@@ -18,6 +18,9 @@
 #	docker run -d -p 27017:27017 --name shopping-mongo mongo
 	To verify mongo has started or not run docker ps command.
 
+# 	Catalog api architecture diagram.
+![image](https://user-images.githubusercontent.com/3676282/135683643-994e1184-8352-4690-935c-613e43d86797.png)
+
 
 
 
