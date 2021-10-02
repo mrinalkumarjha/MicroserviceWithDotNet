@@ -29,6 +29,11 @@
 
 	Data Layer : 
 
+# Containerize catalog microservice with mongodb using docker compose.
+	With docker compose you can make multiple container defination in single file and run all with the help of single
+	command.
+	Here we are going to add docker compose file for catalog microservice.
+	Right click on catalog microservice project file > 
 
 
 
