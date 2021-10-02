@@ -55,6 +55,28 @@
 				image:mongo
 
 
+# Test catalog service in docker env:
+	Right click on docker compose > open in terminal
+	first stop existing mongo image by following command
+
+	docker ps to list image
+	it wil give container id
+
+	then docker stop first 4 char of containerid  : it will stop existing image
+	now remove that image
+	docker rm 00b7
+
+	docker images : to check if old image exists
+
+#	Now we will run our docker yml file which contain our catalog service and mongo db image.
+
+	run command in powershell:
+
+	docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+
+
+
 	
 	
 
