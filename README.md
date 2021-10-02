@@ -47,6 +47,17 @@
 # Docker composr.yml
 	it holds services with image and dockerfile path.
 
+# Add mongo db  database  to docker compose file.
+
+	add following in docker-compose.yml
+
+			catalogdb:
+				image:mongo
+
+
+	
+	
+
 
 
 
