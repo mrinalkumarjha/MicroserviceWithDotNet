@@ -33,7 +33,20 @@
 	With docker compose you can make multiple container defination in single file and run all with the help of single
 	command.
 	Here we are going to add docker compose file for catalog microservice.
-	Right click on catalog microservice project file > 
+	Right click on catalog microservice project file > Add > Container Orchestor Support.
+	From new window select Docker Compose and press OK.
+	Select os as linux.
+	Once you click ok. docker-compose in solution root
+	and dockerfile inside Catalog.API will be created. and that will automatically set as startup project.
+
+	The purpose of creating dockerfile is when we ask docker to extract image to our catalog microservice 
+	it will search for file name DockerFile inside project and this will work our project as per setting in it.
+
+	Basically dockerfile consist two part . first part is to build application and second part is to publishing and run app.
+
+# Docker composr.yml
+	it holds services with image and dockerfile path.
+
 
 
 
