@@ -145,9 +145,30 @@ docker rmi $(docker images -q) -f
 docker system prune
 
 
+# Added BAsket.API service
 
 
 
+# Redis in dockr
+	docker pull redis : this will pull image from server and install in local pc
+
+	to run image 
+		docker run -d -p 6379:6379 --name aspnetrun-redis redis
+
+	To interact with docker redis in command:
+
+		docker exec -it aspnetrun-redis /bin/bash
+
+		after this command we will be in container and can hit redis command.
+
+		some redis command is:
+		redis-cli : this will take to redis cli
+		ping - PONG
+
+		set key value
+		get key
+		set name mrinal
+		get name
 
 
 
