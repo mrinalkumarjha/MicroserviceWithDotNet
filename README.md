@@ -75,11 +75,74 @@
 	docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
 
 
+# Run mogodb client for gui purpose
+	docker run -d -p 3000:3000 mongoclient/mongoclient
+	this will download mongo client image and run it
 
+	check if image available using docker ps command
+
+	once it is available run it in browser : localhost:3000
+
+
+
+# Debugging docker compose in vs for catalog api.
+	Once docker support is added now if we will biuld application from vs it will build docker container also.
+	click on run Docker Compose
+
+	if you get following error , stop all docker container using command 	"docker-compose -f docker-compose.yml -f docker-compose.override.yml down"
+
+		Error	DT1001	Error response from daemon: Conflict. The container name "/catalogdb" is already in use by container.
+
+
+
+# Some useful docker command
 
 	
-	
+Docker Commands
 
+Example docker hub pull :
+	docker run -d --hostname swn-rabbit --name swn-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+Single Container
+For aspnetcore app after adding docker file -- for single container add docker file build and run = create new container
+	$ docker build -t aspnetapp .
+	$ docker run -d -p 8080:80 --name myapp aspnetapp
+
+docker compose up
+	This command run multiple container
+
+Multi Container - docker-compose.yml
+	docker-compose up
+	docker-compose -f docker-compose.yaml -f docker-compose-infrastructure.yaml up --build
+
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
+
+2
+
+DOCKER REMOVE ALL CONTAINER IMAGES PS -A
+
+POWERSHELL commands
+
+https://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images
+
+List all containers (only IDs)
+docker ps -aq
+Stop all running containers
+docker stop $(docker ps -aq)
+Remove all containers
+docker rm $(docker ps -aq)
+Remove all images
+docker rmi $(docker images -q)
+Remove all none images
+docker system prune
+
+-- You can also run all with copy paste
+
+docker ps -aq
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q) -f
+docker system prune
 
 
 
