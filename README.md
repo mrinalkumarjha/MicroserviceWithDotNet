@@ -173,5 +173,13 @@ docker system prune
 		get name
 
 
+# Dependencies of basket api:
+	Microsoft.Extensions.caching.StackExchangeRedis : for communication of redis
+	Nutonsoft.json : for json parsing
+
+# why redis has been choosen for basket api.
+	basket api will store and manage basket and basket item . so to cache basket we will use redis.
+	redis is used as distributed caching.
+
 
 
