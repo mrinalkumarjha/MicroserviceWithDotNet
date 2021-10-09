@@ -174,8 +174,13 @@ docker system prune
 
 
 # Dependencies of basket api:
-	Microsoft.Extensions.caching.StackExchangeRedis : for communication of redis
+	Microsoft.Extensions.caching.StackExchangeRedis : for communication of redis 
+	install this in basket api using package manager :  Install-Package Microsoft.Extensions.caching.StackExchangeRedis
+
 	Nutonsoft.json : for json parsing
+
+	update existing package to new 
+	Update-Package -ProjectName Basket.API
 
 # why redis has been choosen for basket api.
 	basket api will store and manage basket and basket item . so to cache basket we will use redis.
