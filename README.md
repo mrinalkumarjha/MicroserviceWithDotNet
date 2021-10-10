@@ -186,5 +186,10 @@ docker system prune
 	basket api will store and manage basket and basket item . so to cache basket we will use redis.
 	redis is used as distributed caching.
 
+# redis-insight : used this gui client for viewing redis db 
+
+# Containerize Basket Microservices with Redis using Docker Compose
+
+	
 
 
