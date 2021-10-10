@@ -201,8 +201,24 @@ docker system prune
 
 # redis:alpine : we have use this image for lightweight redis.
 
+# Stop old redis image as we have added image in yml
+	list image : docker ps
+	stop image : docker stop ff23 (ff23 is id of container)
+
+	remove from stopped list
+
+	list stopped image: docker ps -a
+	remove image : docker rm oo23
 
 
+
+# run docker compose now
+
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+	when we make any changes in code use -- build in docker compose 
+    docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d  --build
+	
 	
 
 

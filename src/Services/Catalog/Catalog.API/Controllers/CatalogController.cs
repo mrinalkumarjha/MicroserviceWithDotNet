@@ -26,7 +26,6 @@ namespace Catalog.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
-
         public async Task<IActionResult> GetProducts()
         {
             var products = await _repository.GetProducts();
@@ -78,20 +77,6 @@ namespace Catalog.API.Controllers
         public async Task<IActionResult> DeleteProductById(string id)
         {
             return Ok(await _repository.DeleteProduct(id));
-        }
-
-        [HttpGet("{id:length(24)}", Name = "test")]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Product>> test(string id)
-        {
-            var product = await _repository.GetProduct(id);
-            if (product == null)
-            {
-                _logger.LogError($"Product with id: {id}, not found.");
-                return NotFound();
-            }
-            return Ok(product);
         }
 
 
