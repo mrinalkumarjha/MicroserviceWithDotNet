@@ -219,6 +219,45 @@ docker system prune
 	when we make any changes in code use -- build in docker compose 
     docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d  --build
 	
+
+# Container management with Portainer
+	Portainer is container management tool. it is open source. it is useful to setup app, monitor app, deploy app.
+	docs : https://docs.portainer.io/v/ce-2.9/start/intro
+
+	add portainer to docker compose.
+	  portainer:
+    image: portainer/portainer-ce
+
+	also add volume
+	  portainer_data:
+
+
+	add following in override file:
+
+	  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+
+
+> Now run docker compose.. this will pull image and add container.
+
+browse portainer : http://localhost:9000/#!/init/admin
+
+id admin
+pass: admin1234
+
+logout and login again to see docker environment.
+
+
+
+
 	
 
 
