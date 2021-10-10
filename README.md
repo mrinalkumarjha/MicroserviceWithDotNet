@@ -267,6 +267,12 @@ logout and login again to see docker environment.
 
 # Create discount service now with postgre db
 
+Postgresql : postgre sql is open source and relational database.
 
+install postgre in docker
 
+search postgres in docker hub.
+
+		POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin1234
 
