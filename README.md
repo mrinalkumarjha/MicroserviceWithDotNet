@@ -190,6 +190,15 @@ docker system prune
 
 # Containerize Basket Microservices with Redis using Docker Compose
 
+	we will use visual container orcastration support tool to containerize basket api.
+
+	rightclick on basket api project> add > container orchestrator support
+
+	select docker compose
+	select linux
+
+	this will create Dockerfile in project root and make change in existing docker-compose.
+
 	
 
 
