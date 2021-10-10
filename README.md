@@ -199,6 +199,10 @@ docker system prune
 
 	this will create Dockerfile in project root and make change in existing docker-compose.
 
+# redis:alpine : we have use this image for lightweight redis.
+
+
+
 	
 
 
