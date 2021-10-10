@@ -218,6 +218,11 @@ docker system prune
 
 	when we make any changes in code use -- build in docker compose 
     docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d  --build
+
+
+# docker hub account
+mrinalkumarjha
+mrinal.1234
 	
 
 # Container management with Portainer
