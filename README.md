@@ -223,6 +223,9 @@ docker system prune
 # docker hub account
 mrinalkumarjha
 mrinal.1234
+# docker playground on cloud: login with docker hub ac
+https://labs.play-with-docker.com/ 
+# docs: https://training.play-with-docker.com/ops-stage1/
 	
 
 # Container management with Portainer
@@ -262,7 +265,8 @@ logout and login again to see docker environment.
 
 
 
+# Create discount service now with postgre db
 
-	
+
 
 
