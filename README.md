@@ -276,3 +276,18 @@ search postgres in docker hub.
 		POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin1234
 
+# pgAdmin: https://www.pgadmin.org/
+
+pgadmin is tool to manage posgresql. it has ui.
+
+setup pgadmin4 image in docker 
+
+		PGADMIN_DEFAULT_EMAIL=admin@test.com
+      - PGADMIN_DEFAULT_PASSWORD=admin1234
+
+run docker compose here again to setup pgadmin in docker.
+
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+
+
