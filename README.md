@@ -320,6 +320,10 @@ INSERT INTO Coupon (ProductName, Description, Amount) VALUES ('IPhone X', 'IPhon
 
 INSERT INTO Coupon (ProductName, Description, Amount) VALUES ('Samsung 10', 'Samsung Discount', 100);
 
+# package used in discount service:
+NpgSql
+Dapper (orm)
+
 
 
 
