@@ -22,31 +22,31 @@ namespace Discount.API.Controllers
         }
 
         [HttpGet("{productName}", Name = "GetDiscount")]
-        [ProducesResponseType(typeof(Coupan), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Coupan>> GetDiscount(string productName)
+        [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Coupon>> GetDiscount(string productName)
         {
             var coupan = await _discountRepository.GetDiscount(productName);
             return Ok(coupan);
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(Coupan), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Coupan>> CreateDiscount([FromBody] Coupan coupan)
+        [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Coupon>> CreateDiscount([FromBody] Coupon coupan)
         {
             await _discountRepository.CreateDiscount(coupan);
             return CreatedAtRoute("GetDiscount", new { productName = coupan.ProductName }, coupan);
         }
 
         [HttpPut]
-        [ProducesResponseType(typeof(Coupan), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Coupan>> UpdateeDiscount([FromBody] Coupan coupan)
+        [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Coupon>> UpdateeDiscount([FromBody] Coupon coupan)
         {
            return Ok(await _discountRepository.UpdateDiscount(coupan));
         }
 
         [HttpDelete("{productName}", Name = "DeleteDiscount")]
-        [ProducesResponseType(typeof(Coupan), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Coupan>> DeleteDiscount(string productName)
+        [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Coupon>> DeleteDiscount(string productName)
         {
             return Ok(await _discountRepository.DeleteDiscount(productName));
         }

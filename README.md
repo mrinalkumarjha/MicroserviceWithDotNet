@@ -336,6 +336,10 @@ After this Docker file would be created in project dir. and docker compose will 
 update docker compose and override file as per need.
 
 
+# Adding migration for discount db.
+after adding this coupan table will be created automatically with dapper when discount service will run.
+
+
 
 
 

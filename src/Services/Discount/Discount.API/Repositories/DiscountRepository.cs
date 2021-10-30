@@ -1,7 +1,4 @@
 ﻿using Discount.API.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
 using Microsoft.Extensions.Configuration;
@@ -17,7 +14,7 @@ namespace Discount.API.Repositories
         {
             _configuration = configuration;
         }
-        public async Task<bool> CreateDiscount(Coupan counpan)
+        public async Task<bool> CreateDiscount(Coupon counpan)
         {
             using var connection = new NpgsqlConnection(
               _configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
@@ -39,21 +36,21 @@ namespace Discount.API.Repositories
             return affected > 0;
         }
 
-        public async Task<Coupan> GetDiscount(string productName)
+        public async Task<Coupon> GetDiscount(string productName)
         {
             using var connection = new NpgsqlConnection(
                 _configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
-            var coupan = await connection.QueryFirstOrDefaultAsync<Coupan>("SELECT * FROM Coupan WHERE ProductName = @ProductName",
+            var coupan = await connection.QueryFirstOrDefaultAsync<Coupon>("SELECT * FROM Coupan WHERE ProductName = @ProductName",
                 new { ProductName = productName});
 
             if (coupan == null)
-            return new Coupan { ProductName = "No Discount", Amount = 0, Description = "No Discount Description" };
+            return new Coupon { ProductName = "No Discount", Amount = 0, Description = "No Discount Description" };
             return coupan;
 
         }
 
-        public async Task<bool> UpdateDiscount(Coupan counpan)
+        public async Task<bool> UpdateDiscount(Coupon counpan)
         {
             using var connection = new NpgsqlConnection(
              _configuration.GetValue<string>("DatabaseSettings:ConnectionString"));

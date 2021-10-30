@@ -8,11 +8,11 @@ namespace Discount.API.Repositories
 {
     public interface IDiscountRepository
     {
-        Task<Coupan> GetDiscount(string productName);
+        Task<Coupon> GetDiscount(string productName);
 
-        Task<bool> CreateDiscount(Coupan counpan);
+        Task<bool> CreateDiscount(Coupon counpan);
 
-        Task<bool> UpdateDiscount(Coupan counpan);
+        Task<bool> UpdateDiscount(Coupon counpan);
 
         Task<bool> DeleteDiscount(string productName);
     }
