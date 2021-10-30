@@ -290,4 +290,7 @@ run docker compose here again to setup pgadmin in docker.
 # docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 
+# create pgadmimn server after login into http://localhost:5050/browser/
+	
+
 
