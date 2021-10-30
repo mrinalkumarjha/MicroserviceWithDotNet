@@ -44,7 +44,7 @@ namespace Discount.API.Controllers
            return Ok(await _discountRepository.UpdateDiscount(coupan));
         }
 
-        [HttpGet("{productName}", Name = "DeleteDiscount")]
+        [HttpDelete("{productName}", Name = "DeleteDiscount")]
         [ProducesResponseType(typeof(Coupan), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupan>> DeleteDiscount(string productName)
         {

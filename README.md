@@ -325,6 +325,16 @@ NpgSql : install Npgsql version 5.X version
 Dapper (orm) : install Dapper version 2.X.. This is developed by stackoverflow.
 
 
+# Containerize discount service with postgre sql
+Right click on discount project file > Add > Container orcastration support
+
+select docker-compose
+target os: linux
+
+After this Docker file would be created in project dir. and docker compose will be apdated with discount services.
+
+update docker compose and override file as per need.
+
 
 
 
