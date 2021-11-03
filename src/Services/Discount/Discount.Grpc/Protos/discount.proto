@@ -1,0 +1,32 @@
+syntax = "proto3"; // proto3 is version of proto here.
+
+option csharp_namespace = "Discount.Grpc.Protos"; // this will tell compiler to generate code within this namespace
+
+service DiscountProtoService {
+	rpc GetDiscount (GetDiscountRequest) returns (CoupanModel);
+	rpc CreateDiscount (CreateDiscountRequest) returns (CoupanModel);
+	rpc UpdateDiscount (UpdateDiscountRequest) returns (CoupanModel);
+	rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
+}
+
+message GetDiscountRequest {
+	string productName = 1; // if it has 2 member then we will assign another member 2 as value. 
+}
+message CreateDiscountRequest {
+	CoupanModel coupon = 1; 
+}
+message UpdateDiscountRequest {
+	CoupanModel coupon = 1; 
+}
+message DeleteDiscountRequest {
+	string productName = 1; 
+}
+message DeleteDiscountResponse {
+	bool success = 1; 
+}
+message CoupanModel {
+	int32 id = 1;
+	string productName = 2;
+	string description = 3;
+	int32 amount = 4;
+}

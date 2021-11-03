@@ -339,6 +339,28 @@ update docker compose and override file as per need.
 # Adding migration for discount db.
 after adding this coupan table will be created automatically with dapper when discount service will run.
 
+# Adding GRPC for discount service>
+gRPC usage of microservice communication :
+	1: Synchronous backend microservice to microservice communication
+	2:Polyglot environment
+	3:Low latency and high throughput communication
+	4:Point to point real time communication
+	5: Network constraint environment
+
+Steps to add grpc template:
+Right click on discount folder > add new project > search for grpc template> add 
+
+For grpc service we need Grpc.AspNetCore package and Protos folder for storing proto file. when you build grpc service
+c# file for each proto file is created inside obj>Debug>net5.0>Protos
+
+Add protocol buffer file inside protos folder for discount.
+Right click on proto file > properties>
+change  Build action to protobuff compiler
+ANd grpc stub class to Server only.
+	
+	
+	
+
 
 
 
