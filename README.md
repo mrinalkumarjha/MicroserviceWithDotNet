@@ -340,7 +340,7 @@ update docker compose and override file as per need.
 after adding this coupan table will be created automatically with dapper when discount service will run.
 
 # Adding GRPC for discount service>
-gRPC usage of microservice communication :
+gRPC usage of microservice communication : gRPC is developed by google
 	1: Synchronous backend microservice to microservice communication
 	2:Polyglot environment
 	3:Low latency and high throughput communication
@@ -358,12 +358,26 @@ Right click on proto file > properties>
 change  Build action to protobuff compiler
 ANd grpc stub class to Server only.
 	
-	
-	
+# Add Dicount service class to implement grpc proto service method.
+we can say service class in grpc project is similar to controller in api project.
+create a discountService class and inherit from proto class created by visual studio.
 
 
+Override methods from base class.
+and add this service class into aspnet pipeline in startup class.
+ ex: endpoints.MapGrpcService<DiscountService>(); 
+
+# Implement automapper in grpc proj.
+
+install nuget package : AutoMapper.Extensions.Microsoft.DependencyInjection
+Create new folder Mapper and create mapping profile by inheriting Profile class from automapper library. and create mapping here.
+inject IMapper inside DiscountService.
+
+REgister Automapper in dependency injection container.
+  services.AddAutoMapper(typeof(Startup));
 
 
+# Consuming disoount grpc from basket api to check discount for product.
 
 
 
