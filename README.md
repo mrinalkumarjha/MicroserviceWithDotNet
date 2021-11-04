@@ -340,7 +340,7 @@ update docker compose and override file as per need.
 after adding this coupan table will be created automatically with dapper when discount service will run.
 
 # Adding GRPC for discount service>
-gRPC usage of microservice communication : gRPC is developed by google
+gRPC usage of microservice communication : gRPC is developed by google and best for microservice communication.
 	1: Synchronous backend microservice to microservice communication
 	2:Polyglot environment
 	3:Low latency and high throughput communication
@@ -388,6 +388,8 @@ REgister Automapper in dependency injection container.
 
 	Build the basket api. now you can see client generated c# file inside obj > Debug > Net5.0 > DiscountGrpc.cs.
 	Inside this class we have all method available like getdiscount...
+
+	Now to encapsulate grpc class create new class DiscountGrpcService.cs in basket.API.
 
 
 
