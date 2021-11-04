@@ -378,6 +378,17 @@ REgister Automapper in dependency injection container.
 
 
 # Consuming disoount grpc from basket api to check discount for product.
+	Basket api is client of discount grpc service.
+
+	To connect discount grpc service in basket api right click on Basket.API > Add > Connected Services
+	inside grpc service section add reference to grpc service.
+
+	Give the path of proto file inside file location (C:\Mrinal\Learning\MicroserviceWithDotNet\src\Services\Discount\Discount.Grpc\Protos\discount.proto)
+	and select client as file to be generated. as we are consuming here grpc so we are client here so vs will automatically generate client file for us.
+
+	Build the basket api. now you can see client generated c# file inside obj > Debug > Net5.0 > DiscountGrpc.cs.
+	Inside this class we have all method available like getdiscount...
+
 
 
 
