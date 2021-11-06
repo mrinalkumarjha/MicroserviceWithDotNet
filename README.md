@@ -403,4 +403,8 @@ REgister Automapper in dependency injection container.
 	command query responsibility segregation principle. 
 	![image](https://user-images.githubusercontent.com/3676282/140613739-e719723c-b806-41e3-a28c-5562531f0d22.png)
 
+	This pattern says that we should seperate the interface of reading data and updating data. it use different database for reading and updating.
+
+	Jason Taylor has github repository for CleanArchitecture.(https://github.com/jasontaylordev/CleanArchitecture)
+
 
