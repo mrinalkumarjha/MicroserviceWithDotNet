@@ -401,4 +401,6 @@ REgister Automapper in dependency injection container.
 
   CQRS:
 	command query responsibility segregation principle. 
+	![image](https://user-images.githubusercontent.com/3676282/140613739-e719723c-b806-41e3-a28c-5562531f0d22.png)
+
 
