@@ -393,5 +393,7 @@ REgister Automapper in dependency injection container.
 
 
 
+# Dependency inversion principle.
+	![image](https://user-images.githubusercontent.com/3676282/140612579-2164ef82-1832-490c-bd79-b401a28d7db8.png)
 
 
