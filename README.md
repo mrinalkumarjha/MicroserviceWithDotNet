@@ -427,4 +427,9 @@ REgister Automapper in dependency injection container.
 
 # CQRS IMPLEMENTATION WITH MEDIATOR DESIGN PATTERN
 	We will use MediatR Nuget package to implement mediator pattern.
+	![image](https://user-images.githubusercontent.com/3676282/140643284-9c38acfb-53f2-4a9f-9f39-72206830f7f0.png)
+
+	
+	![image](https://user-images.githubusercontent.com/3676282/140643349-c7d87e9f-aa3d-4203-a2b9-927e29e57a24.png)
+
 	
