@@ -407,7 +407,12 @@ REgister Automapper in dependency injection container.
 
 	Jason Taylor has github repository for CleanArchitecture.(https://github.com/jasontaylordev/CleanArchitecture)
 	
-	Clean architecture diagram ![image](https://user-images.githubusercontent.com/3676282/140641000-8dce57c6-34f6-41d6-bf34-6c3cb11abcb6.png)
+	Clean architecture diagram 
+	![image](https://user-images.githubusercontent.com/3676282/140641000-8dce57c6-34f6-41d6-bf34-6c3cb11abcb6.png)
 
+	Domain layer has no dependency
+	Application layer has reference of domain
+	Infrastructure layer has reference of application
+	Api layer is presentation layer it will have reference of both application and infracture layer as reference
 
 
