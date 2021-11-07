@@ -416,3 +416,15 @@ REgister Automapper in dependency injection container.
 	Api layer is presentation layer it will have reference of both application and infracture layer as reference
 
 
+	Application Layer: This layer is responsible for business use cases business validations.
+	main folder of application layer is Contract, Feature, Behaviour
+	Contract folder has all interfaces.
+
+	Feature folder has cqrs implementation
+
+	Behaviour folder has implementations
+
+
+# CQRS IMPLEMENTATION WITH MEDIATOR DESIGN PATTERN
+	We will use MediatR Nuget package to implement mediator pattern.
+	
