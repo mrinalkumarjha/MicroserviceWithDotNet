@@ -406,5 +406,8 @@ REgister Automapper in dependency injection container.
 	This pattern says that we should seperate the interface of reading data and updating data. it use different database for reading and updating.
 
 	Jason Taylor has github repository for CleanArchitecture.(https://github.com/jasontaylordev/CleanArchitecture)
+	
+	Clean architecture diagram ![image](https://user-images.githubusercontent.com/3676282/140641000-8dce57c6-34f6-41d6-bf34-6c3cb11abcb6.png)
+
 
 
