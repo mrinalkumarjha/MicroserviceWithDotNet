@@ -429,7 +429,29 @@ REgister Automapper in dependency injection container.
 	We will use MediatR Nuget package to implement mediator pattern.
 	![image](https://user-images.githubusercontent.com/3676282/140643284-9c38acfb-53f2-4a9f-9f39-72206830f7f0.png)
 
+	Flow in project 
 	
 	![image](https://user-images.githubusercontent.com/3676282/140643349-c7d87e9f-aa3d-4203-a2b9-927e29e57a24.png)
 
 	
+	Install MediatR.Extensions.Microsoft.DependencyInjection inside Ordering.Application proj
+
+	Lecture 95 is explanation of mediator pttern after implementation.
+
+# Implementing custome exception inside Ordering.Application
+
+	For this we have created new NotFoundException class and inherited from ApplicationException.
+
+# Developing behaviour of ordering.
+	We will use IPipelineBehaviour of Mediatr library to create preprocessor behaviour.
+
+	request will be handled like this
+
+	REQUEST  ==>  MediatR  ==>  Preprocessor Behaviour ==> Handle Request ==> Post processor behaviour
+
+	MediatR library has IRequestHandler to handle request and IPipelineBehaviour interface to add preprocessing
+	logic to pipeline.
+
+	ValidationBehaviour.cs is implementation of IPipelineBehaviour
+
+	Lecture 98 is explanation of mediator pttern after implementation.
