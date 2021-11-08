@@ -455,3 +455,6 @@ REgister Automapper in dependency injection container.
 	ValidationBehaviour.cs is implementation of IPipelineBehaviour
 
 	Lecture 98 is explanation of mediator pttern after implementation.
+
+# Creating extension method  for regestring services of Ordering.Application
+	ApplicationServiceRegistration is extension class for registering services.
