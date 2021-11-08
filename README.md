@@ -410,19 +410,20 @@ REgister Automapper in dependency injection container.
 	Clean architecture diagram 
 	![image](https://user-images.githubusercontent.com/3676282/140641000-8dce57c6-34f6-41d6-bf34-6c3cb11abcb6.png)
 
-	Domain layer has no dependency
-	Application layer has reference of domain
-	Infrastructure layer has reference of application
-	Api layer is presentation layer it will have reference of both application and infracture layer as reference
+	DOMAIN LAYER: Domain layer has no dependency
+	APPLICATION LAYER: Application layer has reference of domain. It has all business logics.
+		This layer is responsible for business use cases business validations.
+		main folder of application layer is Contract, Feature, Behaviour
+		Contract folder has all interfaces.
+		Feature folder has cqrs implementation
+		Behaviour folder has implementations
+
+	INFRA LAYER: Infrastructure layer has reference of application. it has implementation 
+	PRESENTATION LAYER : Ordering.API , Api layer is presentation layer it will have reference of both application and infracture layer as reference
 
 
-	Application Layer: This layer is responsible for business use cases business validations.
-	main folder of application layer is Contract, Feature, Behaviour
-	Contract folder has all interfaces.
-
-	Feature folder has cqrs implementation
-
-	Behaviour folder has implementations
+	Application Layer: 
+	
 
 
 # CQRS IMPLEMENTATION WITH MEDIATOR DESIGN PATTERN
@@ -458,3 +459,8 @@ REgister Automapper in dependency injection container.
 
 # Creating extension method  for regestring services of Ordering.Application
 	ApplicationServiceRegistration is extension class for registering services.
+
+# Implementation presentation layer:
+
+	since we are using mediator pattern and presentation layer will send request to mediater which is IMediatR. 
+	Added OrderController with order endpoints in presentation layer.
