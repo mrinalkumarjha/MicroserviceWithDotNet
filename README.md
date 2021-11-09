@@ -464,3 +464,17 @@ REgister Automapper in dependency injection container.
 
 	since we are using mediator pattern and presentation layer will send request to mediater which is IMediatR. 
 	Added OrderController with order endpoints in presentation layer.
+
+# Develop Ordering.Infrastructure
+  Here we will implement abstraction from application layer.
+  install package Microsoft.EntityFrameworkCore.SqlServer (5.0.12)
+
+  Created OrderContext and seed class. overrided SaveChangesAsync to set default value for createdby and createddate
+  Created OrderRepository and RepositoryBase to implement abstraction.
+
+  Implement email service inside infracture.
+  To send email we will use SendGrid Library. and implemented in EmailService class.
+
+
+
+
