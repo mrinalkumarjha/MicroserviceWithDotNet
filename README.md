@@ -479,6 +479,15 @@ REgister Automapper in dependency injection container.
 	for this we have to register extension method ApplicationServiceRegistration and InfrastructureServiceRegistration
 	inside ordering.Api startup.cs ConfigureServices
 
+# Adding Migration for code first approach.
+	1> set ordering.api as startup project.
+	2> install some package in ordering.api for migration
+		Microsoft.EntityFrameworkCore.Tools (5.0.12)  : this will help to generate codefirst migration folder.
+
+	Now to generate migration inside infrastructure project open package Manager console. select default project 
+	as Ordering.Infrastructure.
+
+	run command : Add-Migration InitialCreate  OR Add-Migration InitialMigration -OutputDir "Persistence/Migrations"
 
 
 
