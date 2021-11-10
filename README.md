@@ -475,6 +475,12 @@ REgister Automapper in dependency injection container.
   Implement email service inside infracture.
   To send email we will use SendGrid Library. and implemented in EmailService class.
 
+# Registering ordering application and ordering infracture service inside ordering api.
+	for this we have to register extension method ApplicationServiceRegistration and InfrastructureServiceRegistration
+	inside ordering.Api startup.cs ConfigureServices
+
+
+
 
 
 
