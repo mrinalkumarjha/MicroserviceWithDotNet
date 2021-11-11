@@ -52,8 +52,16 @@ namespace Ordering.API.Extensions
                                                     IServiceProvider services)
                                                     where TContext : DbContext
         {
-            context.Database.Migrate(); // this line will create db in sqlserver and apply remaning migrations
-            seeder(context, services);
+            try
+            {
+                context.Database.Migrate(); // this line will create db in sqlserver and apply remaning migrations
+                seeder(context, services);
+            }
+            catch(Exception ex)
+            {
+               // logger.LogError(ex, "An error occurred while migrating the database used on context");
+
+            }
         }
 
 

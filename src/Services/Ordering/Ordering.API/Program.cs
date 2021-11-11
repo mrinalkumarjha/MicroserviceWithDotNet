@@ -16,12 +16,13 @@ namespace Ordering.API
 
 
             // add sql migration here
-            host.MigrateDatabase<OrderContext>((context, services) => {
+            host.MigrateDatabase<OrderContext>((context, services) =>
+            {
                 var logger = services.GetService<ILogger<OrderContextSeed>>();
                 OrderContextSeed.SeedAsync(context, logger)
                 .Wait();
             });
-            
+
             host.Run();
         }
 
