@@ -487,8 +487,10 @@ REgister Automapper in dependency injection container.
 	Now to generate migration inside infrastructure project open package Manager console. select default project 
 	as Ordering.Infrastructure.
 
-	run command : Add-Migration InitialCreate  OR Add-Migration InitialMigration -OutputDir "Persistence/Migrations"
+	run command : Add-Migration InitialCreate  OR Add-Migration InitialMigration -OutputDir "Persistense/Migrations"
 
+# Applying migration automatically to sqlserver when api project runs.
+	created extension of host HostExtensions.cs inside Odering.API to apply migration automatically when ordering.Api starts.
 
 
 
