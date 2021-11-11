@@ -492,6 +492,19 @@ REgister Automapper in dependency injection container.
 # Applying migration automatically to sqlserver when api project runs.
 	created extension of host HostExtensions.cs inside Odering.API to apply migration automatically when ordering.Api starts.
 
+# Add Sql server image in docker compose
+	check sqlserver image on https://hub.docker.com/
+	or see link below for official image
+	https://hub.docker.com/_/microsoft-mssql-server
+
+
+	After adding image in docker compose and overriding enviroment variable in override file run docker compose in terminal.
+
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+
+
+
 
 
 
