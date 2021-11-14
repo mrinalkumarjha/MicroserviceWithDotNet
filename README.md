@@ -1,5 +1,25 @@
 # MicroserviceWithDotNet
 
+
+API ENDPOINTS:
+	Catalog API : http://localhost:8000/swagger/index.html
+	Basket API	: http://localhost:8002/swagger/index.html
+	Discount API: http://localhost:8002/swagger/index.html
+	Discount GRPC: http://localhost:8004						: it use http2 protocol so it has not ui.
+	Portainer:    http://localhost:9000/#!/init/admin
+					id	 : admin
+					pass : admin1234
+	
+	PgAdmin:	  http://localhost:5050/browser/
+					servername : pgServer
+					hostname:discountdb
+					uid:admin
+					pass:admin1234
+					port : 5432
+
+
+
+
 1: Setting up mongodb in docker
 	For this your docker for desktop app should be running in machine.
 	GOTO hub.docker.com in browser
