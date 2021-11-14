@@ -392,6 +392,21 @@ REgister Automapper in dependency injection container.
 	Now to encapsulate grpc class create new class DiscountGrpcService.cs in basket.API.
 
 
+# Containerize Discount Grpc Microservice with postgre sql with Docker compose
+	Right click on discount Grpc -> Add -> Container Orchestrator Support
+	Select Container Orchestrator as Docker-Compose
+	select Os as Linux
+	A docker file is created inside project Discount.Grpc
+	and docker-compose.yml and override file will be updated also. we can update the settings there.
+
+	The purpose of this docker file is when we ask docker to get images it looks for docker file inside project and get images from server and 
+	create image locally.
+
+# Add Discount grpc url config in basket api image config in docker compose override file..
+
+
+
+
 
 # Building Ordering service with sql server and cqrs
 	
