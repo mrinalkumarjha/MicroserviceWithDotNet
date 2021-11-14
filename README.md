@@ -419,6 +419,9 @@ REgister Automapper in dependency injection container.
 	because In docker network its enough to say container name when it comes to communicate 2 containers. But for database ones, 
 	it can be required additional port number explicitly.
 
+# Build particular docker image
+	
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up   --build
 
 
 # Building Ordering service with sql server and cqrs
