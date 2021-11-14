@@ -404,7 +404,20 @@ REgister Automapper in dependency injection container.
 
 # Add Discount grpc url config in basket api image config in docker compose override file..
 
+	 basket.api:
+    container_name: basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "CacheSettings.ConnectionString=basketdb:6379"
+      - "GrpcSettings.DiscountUrl=discount.grpc"
+    depends_on:
+      - basketdb
+    ports:
+      - "8002:80"
 
+	We did not added port for GrpcSettings.DiscountUrl..
+	because In docker network its enough to say container name when it comes to communicate 2 containers. But for database ones, 
+	it can be required additional port number explicitly.
 
 
 
