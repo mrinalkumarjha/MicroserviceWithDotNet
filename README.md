@@ -574,3 +574,5 @@ REgister Automapper in dependency injection container.
 	Use docker up
 
 	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+# Async microservice communication with RabbitMQ and MassTransit for cjeckout order.
