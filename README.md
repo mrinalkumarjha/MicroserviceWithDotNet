@@ -580,5 +580,18 @@ REgister Automapper in dependency injection container.
 	Diagram of checkout order communication
 	![image](https://user-images.githubusercontent.com/3676282/141788130-c7e4da77-af9d-4e61-822f-a0d13f088bd5.png)
 
+
+	Microservice Communication types:
+
+	Three types of microservice communication happens
+	1: Request Driven architecture:  In this approach service communicate between http or grpc. in our proj basket api communicate with discount grpc.
+										We can easily determine sequence of actions. if one of the dependent service is down call cannot proceed.
+	2: Event driven architecture: In this architecture services dont call each other. instead they create event and consume events from 
+									Message broaker system in async way.
+
+									Producer dosent know about consumer also consumer dont know about producer services. As a result services can deployed
+									and maintained seperately.
+
+	3: Hybrid Architecture: Depending on scenario we can use custom
 	
 	
