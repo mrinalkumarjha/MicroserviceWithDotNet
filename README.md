@@ -576,3 +576,9 @@ REgister Automapper in dependency injection container.
 	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 # Async microservice communication with RabbitMQ and MassTransit for cjeckout order.
+	
+	Diagram of checkout order communication
+	![image](https://user-images.githubusercontent.com/3676282/141788130-c7e4da77-af9d-4e61-822f-a0d13f088bd5.png)
+
+	
+	
