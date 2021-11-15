@@ -596,5 +596,8 @@ REgister Automapper in dependency injection container.
 	
 	![image](https://user-images.githubusercontent.com/3676282/141792263-71a15b75-03b1-4612-b8be-69c8fbf6ff4a.png)
 
-	
+# What is RabbitMq ?
+	Rabbit Mq is message quing system.	some similar service is Apache Kafka, Msmq, Microsoft Azure service bus, Kestral, ActiveMq.
+	All transaction is kept in queue until consumer consume it.
+
 	
