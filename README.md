@@ -561,8 +561,16 @@ REgister Automapper in dependency injection container.
 	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 
+# Containerize Ordering api Microservice with sql server using Docker compose
+	Right click on Ordering.api -> Add -> Container Orchestrator Support
+	Select Container Orchestrator as Docker-Compose
+	select Os as Linux
+	A docker file is created inside project Ordering.api
+	and docker-compose.yml and override file will be updated also. we can update the settings there.
 
+	The purpose of this docker file is when we ask docker to get images it looks for docker file inside project and get images from server and 
+	create image locally.
 
+	Use docker up
 
-
-
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
