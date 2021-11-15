@@ -634,6 +634,12 @@ REgister Automapper in dependency injection container.
 	3: Fanout Exchanges: If one queue is needed to broadcasted to multiple consumer. useful for gaming.
 	4: Header Exchanges:
 
+	Exchnage type image.
+	![image](https://user-images.githubusercontent.com/3676282/141808623-a31da237-8d7a-413e-9291-65e76d8e3937.png)
+	
+	Topic and Fanout exchange type image.
+	![image](https://user-images.githubusercontent.com/3676282/141808928-8f76757f-8ca8-4686-9d84-8be73293ded1.png)
+
 
 
 
