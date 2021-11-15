@@ -625,6 +625,17 @@ REgister Automapper in dependency injection container.
 	
 	![image](https://user-images.githubusercontent.com/3676282/141804543-c8624381-3d84-4301-a3f4-b991b61d0160.png)
 
+# RabbitMq Exchange Types:
+	1: Direct Exchanges: One queue directly sent to one consumer.
+	2: Topic Exchanges: One queue is being send to different consumer based on subject. Its a variation of publish subscribe pattern.
+						If we have several consumer. Topic exchange is used to determine what kind of message they want to receive.
+						we will use this in our project.
+
+	3: Fanout Exchanges: If one queue is needed to broadcasted to multiple consumer. useful for gaming.
+	4: Header Exchanges:
+
+
+
 
 
 
