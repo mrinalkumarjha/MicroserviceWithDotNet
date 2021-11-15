@@ -602,3 +602,19 @@ REgister Automapper in dependency injection container.
 
 	![image](https://user-images.githubusercontent.com/3676282/141793643-b37c554a-71aa-4531-8a19-df65693651f2.png)
 
+
+# Main component of RabbitMq
+	1: Producer: It is source of creating message. Message is data that we send in queue.
+	2: Queue:  Queue is where the message is stored. all incoming message are stored in queue that is memory.
+	3: Consumer: consumer is server that needs sent mesages. It is application that will receive messages and process it from queue.
+
+	4: Exchange: Before sending message we have Exchange. Exchange decide which queue to send message. it makes decision based on routing case.
+
+	5: Binding : Binding is link between exchnage and queues.
+
+	In queue we have FIFO which is first in and first out. Order of processing message in queue is first in first out.
+
+
+
+
+
