@@ -134,8 +134,15 @@ docker compose up
 Multi Container - docker-compose.yml
 	docker-compose up
 	docker-compose -f docker-compose.yaml -f docker-compose-infrastructure.yaml up --build
+	
+	When there is change in code file use docker compose with --build command .
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
 
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
+	When there is change in docker compose file use following command.
+	docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+	To stop  docker container: following command will stop container but images will be saved in hard disk.
+	docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
 
 2
 
