@@ -594,4 +594,7 @@ REgister Automapper in dependency injection container.
 
 	3: Hybrid Architecture: Depending on scenario we can use custom
 	
+	![image](https://user-images.githubusercontent.com/3676282/141792263-71a15b75-03b1-4612-b8be-69c8fbf6ff4a.png)
+
+	
 	
