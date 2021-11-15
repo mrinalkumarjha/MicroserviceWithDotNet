@@ -612,7 +612,14 @@ REgister Automapper in dependency injection container.
 
 	5: Binding : Binding is link between exchnage and queues.
 
-	In queue we have FIFO which is first in and first out. Order of processing message in queue is first in first out.
+	In queue we have FIFO which is first in and first out. Order of processing message in queue is first in first out. following are image of rabbitMq component.
+
+	![image](https://user-images.githubusercontent.com/3676282/141804273-6b1652c2-c873-4774-8d47-92bc5a2e99b0.png)
+	
+	
+	![image](https://user-images.githubusercontent.com/3676282/141804543-c8624381-3d84-4301-a3f4-b991b61d0160.png)
+
+
 
 
 
