@@ -616,6 +616,12 @@ REgister Automapper in dependency injection container.
 
 	![image](https://user-images.githubusercontent.com/3676282/141804273-6b1652c2-c873-4774-8d47-92bc5a2e99b0.png)
 	
+
+# RabbitMq Queue properties:
+	1: Name: Name of queue what we have defined.
+	2: Durable: This will determine the lifetime of the queue.
+	3: Exclusive: This contains info whether queue will be used in some other connection or not.
+	4: AutoDelete: autodel info.
 	
 	![image](https://user-images.githubusercontent.com/3676282/141804543-c8624381-3d84-4301-a3f4-b991b61d0160.png)
 
