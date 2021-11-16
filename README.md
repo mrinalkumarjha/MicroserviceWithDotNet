@@ -684,4 +684,8 @@ REgister Automapper in dependency injection container.
 
 	Masstransit is opensource message bus for dotnet ecosystem. Masstransit is useful for routing message over msmq, rabbitMq and so on.
 	We will create a class lib for building event.
+	
+	
+	![image](https://user-images.githubusercontent.com/3676282/141998882-a2f709db-006f-411f-ac5e-6812ca45ae8d.png)
 
+	![image](https://user-images.githubusercontent.com/3676282/141998755-b3361a92-bb2b-4997-b566-f971e8fc4fba.png)
