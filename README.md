@@ -3,9 +3,13 @@
 
 API ENDPOINTS:
 	Catalog API : http://localhost:8000/swagger/index.html
+	
 	Basket API	: http://localhost:8002/swagger/index.html
+	
 	Discount API: http://localhost:8002/swagger/index.html
+	
 	Discount GRPC: http://localhost:8004						: it use http2 protocol so it has not ui.
+	
 	Portainer:    http://localhost:9000/#!/init/admin
 					id	 : admin
 					pass : admin1234
