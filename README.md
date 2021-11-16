@@ -17,7 +17,9 @@ API ENDPOINTS:
 					pass:admin1234
 					port : 5432
 
-
+    RabbitMQ Dashboard: http://localhost:15672
+					uid: guest
+					pass: guest
 
 
 1: Setting up mongodb in docker
@@ -599,6 +601,7 @@ REgister Automapper in dependency injection container.
 # What is RabbitMq ?
 	Rabbit Mq is message quing system.	some similar service is Apache Kafka, Msmq, Microsoft Azure service bus, Kestral, ActiveMq.
 	All transaction is kept in queue until consumer consume it. Following image show how transaction happens in rabbit mq.
+	RabbitMQ is an open source multi-protocol messaging broker.
 
 	![image](https://user-images.githubusercontent.com/3676282/141793643-b37c554a-71aa-4531-8a19-df65693651f2.png)
 
@@ -641,10 +644,36 @@ REgister Automapper in dependency injection container.
 	![image](https://user-images.githubusercontent.com/3676282/141808928-8f76757f-8ca8-4686-9d84-8be73293ded1.png)
 
 
+# Adding RabbitMq into docker compose for multi container docker env:
+	look into https://hub.docker.com/_/rabbitmq
+	4Gb config is required
+	this port "5672:5672" is for rabbitmq
+	this port "15672:15672" is for rabbit mq dashboard
 
 
+	inside docker compose add rabbitmq image:
+	  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+	
+	inside docker compose override add rabbitmq config:
+	  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+        - "5672:5672"
+        - "15672:15672"
 
 
+	Run docker compose to add image in docker.
+	
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
+	Once image is updated in docker we can browser rabbitmq dashboard in localhost using url
+
+	localhost:15672
+	uid: guest
+	pass: guest
+	guest is default id and password.
 
 
