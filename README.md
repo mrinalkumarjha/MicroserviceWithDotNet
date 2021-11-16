@@ -698,3 +698,11 @@ REgister Automapper in dependency injection container.
 	![image](https://user-images.githubusercontent.com/3676282/141998755-b3361a92-bb2b-4997-b566-f971e8fc4fba.png)
 
 
+# RabbitMq nuget packages
+	MassTransit
+	Masstransit.RabbitMQ
+	Masstransit.AspNetCore  : to inject asp.net built in dependency injection
+
+# Develop EventBus.Messages BuildingBlock class library
+	since this is not microservice we will create new folder in solution BuildingBlocks
+
