@@ -604,7 +604,7 @@ REgister Automapper in dependency injection container.
 	RabbitMQ is an open source multi-protocol messaging broker.
 
 	![image](https://user-images.githubusercontent.com/3676282/141793643-b37c554a-71aa-4531-8a19-df65693651f2.png)
-
+	We will use rabbitMq and masstransit to do Async communication between basket and ordering microservice.
 
 # Main component of RabbitMq
 	1: Producer: It is source of creating message. Message is data that we send in queue.
@@ -676,4 +676,12 @@ REgister Automapper in dependency injection container.
 	pass: guest
 	guest is default id and password.
 
+
+# Analysis of rabbitMq implementation.
+	When basket checkout operation performed, we are going to create basket checkout event and consume this event from ordering service with 
+	using messtransit.
+
+
+	Masstransit is opensource message bus for dotnet ecosystem. Masstransit is useful for routing message over msmq, rabbitMq and so on.
+	We will create a class lib for building event.
 
