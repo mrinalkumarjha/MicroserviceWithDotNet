@@ -683,7 +683,7 @@ REgister Automapper in dependency injection container.
 
 # Analysis of rabbitMq implementation.
 	When basket checkout operation performed, we are going to create basket checkout event and consume this event from ordering service with 
-	using messtransit.
+	using rabbitMQ and messtransit.
 
 
 	Masstransit is opensource message bus for dotnet ecosystem. Masstransit is useful for routing message over msmq, rabbitMq and so on.
@@ -706,3 +706,25 @@ REgister Automapper in dependency injection container.
 # Develop EventBus.Messages BuildingBlock class library
 	since this is not microservice we will create new folder in solution BuildingBlocks
 
+# Produce RabbitMqEvent
+	Add EventBus.Messages class library into Basket service
+
+	When we add any reference we should also modify docker file.
+
+	install following in basket service
+	MassTransit
+	Masstransit.RabbitMQ
+	Masstransit.AspNetCore
+
+	Register it in startup.cs it create new bus for basket
+
+	   // MassTransit-RabbitMQ Configuration
+            services.AddMassTransit(config => {
+                config.UsingRabbitMq((ctx, cfg) => {
+                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
+#
