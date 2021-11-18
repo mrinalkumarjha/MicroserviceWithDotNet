@@ -733,3 +733,10 @@ REgister Automapper in dependency injection container.
 	this automatically install autommaper and extension method to use in di container.
 
 
+	1: create BasketProfile and inherit from Profile(this is from automapper).
+	2: map source destination class in constructor.
+	3: Add automapper in di container inside startup class.
+	4: inject Imapper in controller and map object.
+
+
+# 
