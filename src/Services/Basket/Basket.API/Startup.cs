@@ -38,7 +38,10 @@ namespace Basket.API
 
             // ADDING REPO TO SERVICE COLLECTION
             services.AddScoped<IBasketRepository, BasketRepository>();
+            // Add automapper
+            services.AddAutoMapper(typeof(Startup));
 
+            // adding grpc
             services.AddGrpcClient <DiscountProtoService.DiscountProtoServiceClient>
                 (options =>
                 {
@@ -46,6 +49,7 @@ namespace Basket.API
                 });
 
             services.AddScoped<DiscountGrpcService>();
+
            
             // MassTransit-RabbitMQ Configuration
             services.AddMassTransit(config => {

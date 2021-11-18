@@ -727,4 +727,9 @@ REgister Automapper in dependency injection container.
 
             services.AddMassTransitHostedService();
 
-#
+# Add automapper in basket api
+
+	install nuget package : AutoMapper.Extensions.Microsoft.DependencyInjection
+	this automatically install autommaper and extension method to use in di container.
+
+
