@@ -2,6 +2,7 @@
 
 
 API ENDPOINTS:
+
 	Catalog API : http://localhost:8000/swagger/index.html
 	
 	Basket API	: http://localhost:8002/swagger/index.html
