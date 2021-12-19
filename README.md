@@ -6,8 +6,9 @@ API ENDPOINTS:
 	Catalog API : http://localhost:8000/swagger/index.html
 	
 	Basket API	: http://localhost:8002/swagger/index.html
+					It use redis db.
 	
-	Discount API: http://localhost:8002/swagger/index.html
+	Discount API: http://localhost:8003/swagger/index.html
 	
 	Discount GRPC: http://localhost:8004						: it use http2 protocol so it has not ui.
 	
@@ -21,10 +22,16 @@ API ENDPOINTS:
 					uid:admin
 					pass:admin1234
 					port : 5432
+	pGAdmin UI cred: 		PGADMIN_DEFAULT_EMAIL=admin@test.com
+					 - PGADMIN_DEFAULT_PASSWORD=admin1234
 
     RabbitMQ Dashboard: http://localhost:15672
 					uid: guest
 					pass: guest
+
+
+Debug app in docker container.
+	Set docker compose as startup project. then run in vs. it will be debuged from container.
 
 
 1: Setting up mongodb in docker

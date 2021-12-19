@@ -41,7 +41,7 @@ namespace Discount.Grpc.Repositories
             using var connection = new NpgsqlConnection(
                 _configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
-            var coupan = await connection.QueryFirstOrDefaultAsync<Coupon>("SELECT * FROM Coupan WHERE ProductName = @ProductName",
+            var coupan = await connection.QueryFirstOrDefaultAsync<Coupon>("SELECT * FROM coupon WHERE ProductName = @ProductName",
                 new { ProductName = productName});
 
             if (coupan == null)
