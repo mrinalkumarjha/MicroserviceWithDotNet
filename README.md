@@ -812,4 +812,10 @@ REgister Automapper in dependency injection container.
 
 
 
-	
+# Create ocelot gateway
+	Created new empty core project inside ApiGateways folder.
+
+	Extended logging functionality inside program.cs
+	Added Ocelot nuget package from nuget.
+	Configure Ocelot in startup class.
+
