@@ -799,6 +799,12 @@ REgister Automapper in dependency injection container.
 	
 	![image](https://user-images.githubusercontent.com/75416010/147410794-c4fcc81a-7c77-4ea2-8aad-42c5c3c5baaa.png)
 
+	# Authentication and authorization in ocelop api gateway
+	
+	![image](https://user-images.githubusercontent.com/75416010/147415393-1966ddd7-1e17-4770-8631-65105d7dec43.png)
+
+	![image](https://user-images.githubusercontent.com/75416010/147415406-34c323b1-75d3-49d3-be6a-ffe2fb320e09.png)
+
 
 
 	
