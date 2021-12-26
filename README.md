@@ -767,3 +767,38 @@ REgister Automapper in dependency injection container.
 
 
 # Building api gateway with ocelot an apply api routing.
+	
+	## Gateway routing pattern : main objective of this pattern is 
+	1: Routing: Route request to multiple services using single endpoint.
+	2: Data Aggregator:
+	3: Protocol Abstractration
+	4:Centralized Error management.
+	
+	![image](https://user-images.githubusercontent.com/75416010/147410361-2e50677d-abc0-4e9a-b976-33489d254611.png)
+	
+	## Api Gateway pattern: This is similar to facad pattern from object oriented world. it gives single entry point for multiple service.
+	Api gateway sits between client application and services. it acts as a reverse proxy. authentication , authorization can also be applied here.
+	We can create(segregate) multiple gateway as per client type. like for web create one gateway and one for mobile request.
+	
+	It is also known as BFF(Backend for frontend pattern)
+	
+	![image](https://user-images.githubusercontent.com/75416010/147410459-08963505-8a18-4df6-9e35-70f4ac212c89.png)
+	
+	Diagram of multiple gateway.
+	
+	![image](https://user-images.githubusercontent.com/75416010/147410648-1cd889f6-2c36-497f-b2eb-9f5a9b709a74.png)
+	
+	Main Features of api gateway pattern:
+	
+	![image](https://user-images.githubusercontent.com/75416010/147410725-56e2dd63-b7c9-4307-a84a-31afc3cb7452.png)
+	
+# Ocelot api gateway: Ocelot is lightweight gateway and simple to  use. it is opensource dotnet core based api gateway. As it is based on dotnet core, it is cross plateform,
+	and it allow you to deploy on window , linux. ocelot works with dot net core only.
+	
+	
+	
+	![image](https://user-images.githubusercontent.com/75416010/147410794-c4fcc81a-7c77-4ea2-8aad-42c5c3c5baaa.png)
+
+
+
+	
