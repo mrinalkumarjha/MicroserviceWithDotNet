@@ -2,7 +2,7 @@
 
 # How to run app in local pc.
 	1: install docker for desktop in window.
-	2: Run docker command from powershell: Right click on docker compose > open in terminal 
+	2: Run docker command from powershell: Right click on docker compose > open in terminal. -d is deattache mode , means background.
 		docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
 
 # Some important docker command:
@@ -818,4 +818,16 @@ REgister Automapper in dependency injection container.
 	Extended logging functionality inside program.cs
 	Added Ocelot nuget package from nuget.
 	Configure Ocelot in startup class.
+
+	 Add ocelot.json to perforn routing.
+	 We will add three json file. one for local, one for development. and configured ocelot.json to be used in app based on env inside program file.
+
+	 Added routes definition inside ocelot.local.json file. 
+
+	 Documentation url of ocelaot : https://ocelot.readthedocs.io/en/latest/introduction/gettingstarted.html
+
+	 Downstream for internal microservices.
+	 upstream for exposing api
+
+	 GlobalConfig for base url of exposing url.
 
