@@ -1,7 +1,26 @@
 # MicroserviceWithDotNet
 
+# How to run app in local pc.
+	1: install docker for desktop in window.
+	2: Run docker command from powershell: Right click on docker compose > open in terminal 
+		docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
 
-API ENDPOINTS:
+# Some important docker command:
+	1: When there is change in docker file like you added a refence of one app run docker-compose with -- build:
+			
+			docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
+
+	2: To stop  docker container: following command will stop container but images will be saved in hard disk.
+			
+			docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
+
+	3: To check docker is running or not using power shell use command
+	
+			docker ps
+	
+	4: To list existing image : docker images
+
+# API ENDPOINTS:
 
 	Catalog API : http://localhost:8000/swagger/index.html
 	
