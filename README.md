@@ -49,7 +49,7 @@
 					pass: guest
 
 
-Debug app in docker container.
+# Debug app in docker container.
 	Set docker compose as startup project. then run in vs. it will be debuged from container.
 
 
