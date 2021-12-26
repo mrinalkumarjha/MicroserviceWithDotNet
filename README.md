@@ -805,6 +805,11 @@ REgister Automapper in dependency injection container.
 
 	![image](https://user-images.githubusercontent.com/75416010/147415406-34c323b1-75d3-49d3-be6a-ffe2fb320e09.png)
 
+	# Design of Api gateway microservice
+	![image](https://user-images.githubusercontent.com/75416010/147415456-7eded822-932f-44be-9d55-57789c9e45cb.png)
+
+	![image](https://user-images.githubusercontent.com/75416010/147415472-a957d768-f013-4baa-b88c-16193a2f533e.png)
+
 
 
 	
