@@ -766,4 +766,4 @@ REgister Automapper in dependency injection container.
 	4: inject Imapper in controller and map object.
 
 
-# 
+# Building api gateway with ocelot an apply api routing.
