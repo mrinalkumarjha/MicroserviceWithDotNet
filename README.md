@@ -860,3 +860,7 @@ REgister Automapper in dependency injection container.
 
 	Now can configure in json file.
 	"FileCacheOptions": { "TtlSeconds": 30 },
+
+# Develop shopping aggregator micro service with applying gateway aggregation pattern:
+	
+	
