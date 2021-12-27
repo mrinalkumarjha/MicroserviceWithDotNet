@@ -821,6 +821,9 @@ REgister Automapper in dependency injection container.
 
 	 Add ocelot.json to perforn routing.
 	 We will add three json file. one for local, one for development. and configured ocelot.json to be used in app based on env inside program file.
+	 When we create core project default environment is Development. we change change this from debug section.
+
+	 ocelot.Development.json is used in docker environment.
 
 	 Added routes definition inside ocelot.local.json file. 
 
@@ -831,3 +834,29 @@ REgister Automapper in dependency injection container.
 
 	 GlobalConfig for base url of exposing url.
 
+
+# Rate limiting in ocelot: 
+	Ocelot support rate limiting of upstream request so that your downstream service donot overloaded. We need to add "RateLimitOptions" to json file.  we can also add this configuration 
+	in global part of ocelot.json
+
+	Following is code which needs to be added on ocelot.json file
+	 
+	"RateLimitOptions": {
+        "ClientWhiteList": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit":  1
+      }
+
+
+	  After this configuration ocelot will throw http status code 429 is for too many request if rate limit exceeded by 1 in 5 second.
+
+
+# Response caching in ocelot api gateway.
+	For this we need to install cacheManager from nuget.  Ocelot.cache.CacheManager
+
+	Now activate cache manager in startup class.
+
+	Now can configure in json file.
+	"FileCacheOptions": { "TtlSeconds": 30 },
