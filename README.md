@@ -883,7 +883,9 @@ REgister Automapper in dependency injection container.
 
 	We can also solve this by chaing http call but this is anti pattern.
 
-	So we will develop shopping aggregator microservice.
+	So we will develop shopping aggregator microservice. lecture 146 & 147 is for this. https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/learn/lecture/25665752#overview
+
+	Shopping.Aggregator inside ApiGateways is aggregator.
 
 
-	
+	In order to connect to internal microservice we shoud store urls in appsettings.json.
