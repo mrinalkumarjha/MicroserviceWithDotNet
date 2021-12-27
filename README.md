@@ -862,5 +862,28 @@ REgister Automapper in dependency injection container.
 	"FileCacheOptions": { "TtlSeconds": 30 },
 
 # Develop shopping aggregator micro service with applying gateway aggregation pattern:
-	
+	Shopping aggregator microservice aggregate multiple client request using httpclient factory. client app send single req to api gateway.
+	then send to multiple internal services then aggregate request and then send back to client app.
+
+# Gateway aggregation pattern :
+	. single request
+	. multiple call to different backend system
+	. Dispatche request to various backend system
+	. Reduce chattiness between client and service
+
+	using a gateway to aggregate  multiple individual request into a single request.
+
+	This pattern is useful when client must make multiple calls to different backend system to perform an operation.
+
+	Why we need this pattern. 
+
+	If we dont apply this pattern client have to call directly shopping basket service then product catalog service then discount service. if any service 
+	is down entire operation is failed.
+
+
+	We can also solve this by chaing http call but this is anti pattern.
+
+	So we will develop shopping aggregator microservice.
+
+
 	
