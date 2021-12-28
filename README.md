@@ -889,3 +889,6 @@ REgister Automapper in dependency injection container.
 
 
 	In order to connect to internal microservice we shoud store urls in appsettings.json.
+
+	Develop service classes to consume internal microservice using IHttpClientFactory.
+	
