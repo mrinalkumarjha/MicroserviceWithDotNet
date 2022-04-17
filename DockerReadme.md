@@ -78,6 +78,9 @@ prettier
 	by using run command or opening interactive terminal we create instance of images. this create concrete container which is based on images. if you run docker run node 2 times it will create
 	2 seperate container.  you can check it with docker ps -a
 	
+	when two container is created from one image it dosent mean code is copied in all two container. container dont hold any code. container is one extra thin layer
+	which has instruction how to run appp.
+	
 	
 	
 > Finding / creating image
@@ -141,7 +144,7 @@ prettier
 	
 # How to create image from this dockerfile.
 
-	DOCKER build . (. says docker file is in same directory from where we are running build). this will create an image.
+	To create image: DOCKER build . (. says docker file is in same directory from where we are running build). this will create an image.
 	
 	once image is created you can check using command(docker ps -a)
 
@@ -152,6 +155,8 @@ prettier
 	Run docker image : docker run -p 3000:80 5c0ab802236c48abec5e2506e35153bf8738308ba5fdf4da9e3f749dfb7bbd56 
 	
 	here 3000 is port where we want top run app of local machine and 80 is port of container which is exposed.
+	
+	For help on any docker command: use --help 
 	
 	
 # EXPOSE & A Little Utility Functionality
@@ -175,6 +180,40 @@ prettier
 	This applies to ALL Docker commands where IDs are needed.
 		
 	
+	
+# Docker image are readonly.
+
+	Once you create image from DOCKER build . command image is created and it is readonly so you cant change source code inside image. if you want to change 
+	source code of image you will have to build in again. we will see some best elegant way to update image source code. right now use docker build . to build image
+	again.
+	
+	so by this process new image will be created and after running this new image using (docker run -p 3000:80 ee21278214df38dd697e5bba8a7071c31790ee9938154887edbe267e3f8b50a5)
+	
+	Now you will be able see latest changes you would have made in source code.
+	
+# Understanding image layer.
+
+	each instruction in dockerfile is layer. when we create image from docker build . it is cached and after changing source code if we again run docker build
+	it checks for cached version if there is no change then it takes from cache.
+	once any layer in between changes all subsequent layer is executed.
+	
+	ex if we change source code only but did not made any change in package.json , copy ./app and all subsequent layer will be executed on docker build.
+	to make it more efficient we copy package.json before npm run. here are modified dockerfile.
+	
+	
+# DOCKER Commands:
+
+	docker ps : list all running container
+	docker ps -a : list all container which are even stopped.
+	docker ps --help : to see all configuration options available for docker ps
+	docker run -p 8000:80 container_name_or_id : create new container based on some image. it is attached mode(means we are attached to container and any console.log kind of output will appear in terminal)
+	docker run -p 8000:80 -d container_name_or_id : create new container based on some image. -d  is deattached mode(means we are not attached to container and any console.log kind of output will not appear in terminal)
+	docker start container_name_or_id: start existing container in deattached mode by default. use this if there is not any source code change. because docker run will create new container each time.
+	docker start -a container_name_or_id: start existing container in attached mode by default.
+	docker stop container_name_or_id : stop running container.
+	docker attach container_name_or_id : to attach container to terminal
+	docker logs container_name_or_id: to see logs of any container
+	docker logs -f container_name_or_id: to keep listning and see logs of any container(similar to attach mode)
 	
 	
 	
