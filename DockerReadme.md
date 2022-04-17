@@ -1,4 +1,4 @@
-# What is Docker ?
+> What is Docker ?
 Docker is container technology: A tool for creating and managing container.
 
 > What is container ?
@@ -93,10 +93,87 @@ prettier
 	TO quit node session of container: ctrl + c
 	
 	
-	SECOND WAY IS TO CREATE OWN IMAGE, custome image:
+	# SECOND WAY IS TO CREATE OWN IMAGE, custome image:
 	
 	To create own image we need to go to project folder > create new file (Dockerfile). This is special name which will be identified by docker.
 	
+	This docker file will consist all instruction which we want to run when we will build image.
+	
+	It starts with FROM all caps
+	
+	# FROM node(node is name of image which is available either on docker hub or in local)
+	
+	Now we need to set working directory so that command will not run in root dir. instead it will run in working dir
+	
+	WORKDIR /app
+	
+	Next we need to give instruction of files which will go into image
+	
+	# COPY . /app  or (COPY . ./    --if workdir is set)  (first dot says all the files and subdirectories) and /app is space inside image where file will be copied.
+	
+	Then any command if we want to execute like npm install in case of node app
+	
+	# RUN npm install  (By default command run inside root directory if workdir is not set. since we want to execute npm install inside /app so we set workdir as /app).
+	
+	Now since docker image has isolated environment which cant be accessible from outside container. we need to expose port of our app from container.
+	
+	# EXPOSE 80  (it will expose 80 port to machine which will run container)
+	
+	Next we need to add command which will be executed when container will be started.
+	
+	# CMD ["node" "server.js"]  (we can use RUN also here to run node but it will run also when image will be created, but we want to run it only when container will be created).
+	
+	complete docker file which we created is as follows.
+	
+	FROM node
+
+	WORKDIR /app
+
+	COPY . /app
+
+	RUN npm instsll
+
+	EXPOSE 80
+
+	CMD ["node" "server.js"]  
+		
+	
+	
+# How to create image from this dockerfile.
+
+	DOCKER build . (. says docker file is in same directory from where we are running build). this will create an image.
+	
+	once image is created you can check using command(docker ps -a)
+
+	docker ps : will list all running process.
+	
+	To stop container : docker stop container name
+	
+	Run docker image : docker run -p 3000:80 5c0ab802236c48abec5e2506e35153bf8738308ba5fdf4da9e3f749dfb7bbd56 
+	
+	here 3000 is port where we want top run app of local machine and 80 is port of container which is exposed.
+	
+	
+# EXPOSE & A Little Utility Functionality
+	In the last lecture, we started a container which also exposed a port (port 80).
+
+	I just want to clarify again, that EXPOSE 80 in the Dockerfile in the end is optional. It documents that a process in the container will expose this port. But you still need to then actually expose the port with -p when running docker run. So technically, -p is the only required part when it comes to listening on a port. Still, it is a best practice to also add EXPOSE in the Dockerfile to document this behavior.
+
+	As an additional quick side-note: For all docker commands where an ID can be used, you don't always have to copy / write out the full id.
+
+	You can also just use the first (few) character(s) - just enough to have a unique identifier.
+
+	So instead of
+
+	docker run abcdefg
+	you could also run
+
+	docker run abc
+	or, if there's no other image ID starting with "a", you could even run just:
+
+	docker run a
+	This applies to ALL Docker commands where IDs are needed.
+		
 	
 	
 	
