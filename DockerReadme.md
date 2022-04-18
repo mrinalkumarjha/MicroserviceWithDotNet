@@ -1,5 +1,7 @@
 # What is Docker ?
-	Docker is container technology: A tool for creating and managing container.
+	Docker is container technology: A tool for creating and managing container. docker is not for only webserver or webapp. we also use docker for console app where
+	we input and get output.
+	
 
 # What is container ?
 	Container in sofware is a standardized unit of software. A package of code and dependencies to run that code(eg NodeJs code + the NodeJs runtime)
@@ -208,12 +210,30 @@
 	docker ps --help : to see all configuration options available for docker ps
 	docker run -p 8000:80 container_name_or_id : create new container based on some image. it is attached mode(means we are attached to container and any console.log kind of output will appear in terminal)
 	docker run -p 8000:80 -d container_name_or_id : create new container based on some image. -d  is deattached mode(means we are not attached to container and any console.log kind of output will not appear in terminal)
+	docker run -p 3000:80 --rm container_name_or_id : by --rm it will automatically remove container once exit.
 	docker start container_name_or_id: start existing container in deattached mode by default. use this if there is not any source code change. because docker run will create new container each time.
 	docker start -a container_name_or_id: start existing container in attached mode by default.
 	docker stop container_name_or_id : stop running container.
 	docker attach container_name_or_id : to attach container to terminal(so that user can see logs and outputs , error from server)
 	docker logs container_name_or_id: to see logs of any container
 	docker logs -f container_name_or_id: to keep listning and see logs of any container(similar to attach mode)
+	
+	docker run -it ee21278214df : To enter in interactive mode(for python script. to enter enput and expect output)
+	docker start -a -i ffdbb802a596 : To start container in interactive mode. ex for python script . -a is atttched and -i means we want to input something.
+	
+	docker rm container_name_or_id container_name_or_id : To remove container.
+	docker rm compassionate_yonath romantic_yalow affectionate_sinoussi  : remove multiple container.
+	
+	docker images : list all images
+	docker rmi image_id image_id: to remove multiple images. it will remove image and all llayers of image. to remove image you will have to remove container first which is using image.
+	docker image prune: it will remove all unused images.
+	
+	docker inspect 8778d77035e2: to inspect, see details like all layers, when created , which os is used , size about images.
+	
+	
+	
+	
+	
 	
 	
 	
@@ -226,7 +246,36 @@
 	attaches you to a running Container with an ID or name of CONTAINER.
 	
 
-		
+# Running python script from docker.
+
+	script.py
+				from random import randint
+
+				min_number = int(input('Please enter the min number: '))
+				max_number = int(input('Please enter the max number: '))
+
+				if (max_number < min_number): 
+				  print('Invalid input - shutting down...')
+				else:
+				  rnd_number = randint(min_number, max_number)
+				  print(rnd_number)
+
+	Dockerfile
+				FROM python
+
+				WORKDIR /app
+
+				COPY . /app
+
+				CMD ["python", "rng.py"]
+
+
+	> docker build . (to create image)
+	> docker run -it ee21278214df : To enter in interactive mode(for python script. to enter enput and expect output)
+	> docker start -a -i ffdbb802a596 : To start container in interactive mode. ex for python script . -a is atttched and -i means we want to input something.
+	
+	
+
 	
 	
 	
