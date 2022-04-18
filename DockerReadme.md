@@ -1,49 +1,49 @@
-> What is Docker ?
-Docker is container technology: A tool for creating and managing container.
+# What is Docker ?
+	Docker is container technology: A tool for creating and managing container.
 
-> What is container ?
-Container in sofware is a standardized unit of software. A package of code and dependencies to run that code(eg NodeJs code + the NodeJs runtime)
+# What is container ?
+	Container in sofware is a standardized unit of software. A package of code and dependencies to run that code(eg NodeJs code + the NodeJs runtime)
 
-Support for container is built into modern operating system.
-Docker simplifies the creation and management of such containers.
-
-
-> Benifits of container, why containers ?
-The same container always yield the exact same application and execution behaviour. No Matter where or by whom it might be executed.
-
-best example is picknik basket. it is one king of container which has everything which is needed in picknik like food, dishes.
-we can carry this basket anywhere and party. also anyone can take this basket from use and enjoy picknik in same way as we would have enjoyed.
-
-Another example is lets say we have developed one application in node v12 and when we deploy that on another remote environment there is nodejs8 installed.
-so there is huge possibility that some api of out code fail to execute. This is where container concept work. so if we want to smooth deployment on 
-different environment(Development, Qa, Production) container technology help us to manage these version related issue. we can lock our version inside container which will work on any environment.
-
-Even in single machine lets say one project in node 8 and one in node 12 for any reason. so switching between these is big hassle, time consuming and bad experiance too.
+	Support for container is built into modern operating system.
+	Docker simplifies the creation and management of such containers.
 
 
-> Install docker on window: download docker desktop and installed. for older window docker toolbox is alternative to docker desktop.
+# Benifits of container, why containers ?
+	The same container always yield the exact same application and execution behaviour. No Matter where or by whom it might be executed.
 
-in command line write docker if you dont get any error it means docker is installed.
+	best example is picknik basket. it is one king of container which has everything which is needed in picknik like food, dishes.
+	we can carry this basket anywhere and party. also anyone can take this basket from use and enjoy picknik in same way as we would have enjoyed.
 
-if you cant install can use playground : https://labs.play-with-docker.com/
+	Another example is lets say we have developed one application in node v12 and when we deploy that on another remote environment there is nodejs8 installed.
+	so there is huge possibility that some api of out code fail to execute. This is where container concept work. so if we want to smooth deployment on 
+	different environment(Development, Qa, Production) container technology help us to manage these version related issue. we can lock our version inside container which will work on any environment.
 
-
-> Docker tools and Building blocks
-
-Docker Engine
-Docker Desktop
-Docker Hub
-Docker Compose
-Kubernetes
-VS code
-
-> Some extension of vs code for docker
-
-Docker of microsoft
-prettier
+	Even in single machine lets say one project in node 8 and one in node 12 for any reason. so switching between these is big hassle, time consuming and bad experiance too.
 
 
-> First docker container
+# Install docker on window: download docker desktop and installed. for older window docker toolbox is alternative to docker desktop.
+
+	in command line write docker if you dont get any error it means docker is installed.
+
+	if you cant install can use playground : https://labs.play-with-docker.com/
+
+
+# Docker tools and Building blocks
+
+	Docker Engine
+	Docker Desktop
+	Docker Hub
+	Docker Compose
+	Kubernetes
+	VS code
+
+# Some extension of vs code for docker
+
+	Docker of microsoft
+	prettier
+
+
+# First docker container
 
 	create a simple node js or any app and add Dockerfile inside it and add configuration in it like below.
 	
@@ -66,7 +66,7 @@ prettier
 	
 	
 	
-> Images vs Container
+# Images vs Container
 
 	container is running unit of software while image is blueprint / templates for container
 	Its image which contains code + require tools / runtime that is require to run a code. and its a container that execute that code.
@@ -83,7 +83,7 @@ prettier
 	
 	
 	
-> Finding / creating image
+# Finding / creating image
 	
 	First way is that we use an existing image from dockerhub.
 	
@@ -211,11 +211,22 @@ prettier
 	docker start container_name_or_id: start existing container in deattached mode by default. use this if there is not any source code change. because docker run will create new container each time.
 	docker start -a container_name_or_id: start existing container in attached mode by default.
 	docker stop container_name_or_id : stop running container.
-	docker attach container_name_or_id : to attach container to terminal
+	docker attach container_name_or_id : to attach container to terminal(so that user can see logs and outputs , error from server)
 	docker logs container_name_or_id: to see logs of any container
 	docker logs -f container_name_or_id: to keep listning and see logs of any container(similar to attach mode)
 	
 	
+	
+# Attaching to an already-running Container
+	By default, if you run a Container without -d, you run in "attached mode".
+
+	If you started a container in detached mode (i.e. with -d), you can still attach to it afterwards without restarting the Container with the following command:
+
+	docker attach CONTAINER
+	attaches you to a running Container with an ID or name of CONTAINER.
+	
+
+		
 	
 	
 	
