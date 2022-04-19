@@ -208,9 +208,12 @@
 	docker ps : list all running container
 	docker ps -a : list all container which are even stopped.
 	docker ps --help : to see all configuration options available for docker ps
-	docker run -p 8000:80 container_name_or_id : create new container based on some image. it is attached mode(means we are attached to container and any console.log kind of output will appear in terminal)
-	docker run -p 8000:80 -d container_name_or_id : create new container based on some image. -d  is deattached mode(means we are not attached to container and any console.log kind of output will not appear in terminal)
-	docker run -p 3000:80 --rm container_name_or_id : by --rm it will automatically remove container once exit.
+	
+	docker run -p 8000:80 image_id : create new container based on some image. it is attached mode(means we are attached to container and any console.log kind of output will appear in terminal)
+	docker run -p 8000:80 -d image_id : create new container based on some image. -d  is deattached mode(means we are not attached to container and any console.log kind of output will not appear in terminal)
+	docker run -p 3000:80 --rm image_id : by --rm it will automatically remove container once exit.
+	docker run -p 8000:80 --name goalsapp 485b13a7c43a : by running image with --name we can name a container which will be created based on image.
+	
 	docker start container_name_or_id: start existing container in deattached mode by default. use this if there is not any source code change. because docker run will create new container each time.
 	docker start -a container_name_or_id: start existing container in attached mode by default.
 	docker stop container_name_or_id : stop running container.
@@ -229,6 +232,11 @@
 	docker image prune: it will remove all unused images.
 	
 	docker inspect 8778d77035e2: to inspect, see details like all layers, when created , which os is used , size about images.
+	
+	docker cp dummy/. nice_leakey:/test   : copy dummy directory to running container inside test folder. same way we can copy files from container to our machine.
+	
+	docker build -t goalsapp:1 .   : to give name/tag any image while building. images has repo:tag format of naming. for detail see Understanding tag section.
+	
 	
 	
 	
@@ -278,9 +286,53 @@
 
 	
 	
+# Understanding tag:
+	
+	we can also assign name to images, but images does not have name field. it has instead Repository and Tag. by name you can set name and by tag we can se version.
+	line node:12
+	
+	Image tag consists of two parts : 1st actual name also called Repository then Tag seperated by colon.
+	
+	name: tag
+	
+	command to set tags: docker build -t goalsapp:1 .
 	
 	
-	
+# Sharing images and container
 
+	we can share images locally or from centrailized server. one who has images can create container based on that images.
 	
+	There are two ways of doing this.
+	
+	1> if someone give you dockerfile and sourcecode one can build image based on this.
+	2> Share complete build image: no build is require for receipient he can use this image and create container based on this. we can push image to dockerhub to share
+		globally.
+		
+	
+# Pushing images to dockerhub.
 
+	we can share images via dockerhub or private registry.
+	
+	> example of sharing on docker hub:
+	
+	go to docker hub
+	create a repository
+	copy push command from repository (docker push mrinalkumarjha/node-goal-app) in my case
+	we need to run this from our local but before that we should have same name image in local including slash  (mrinalkumarjha/node-goal-app)4
+	
+	so re tag your image if name is not same using command : docker tag goals:1 mrinalkumarjha/node-goal-app:1
+	this will create clone of old with new name provided.
+	
+	now run push command : docker push mrinalkumarjha/node-goal-app:1
+	
+	this will start pushing but gives access denied error in last. for that you need to docker login first. we need to run this command once.
+	run docker login
+	
+	now run push command again : docker push mrinalkumarjha/node-goal-app:1
+	
+	after this images is there in repo.
+	
+	
+	
+	
+	
