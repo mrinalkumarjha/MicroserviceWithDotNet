@@ -237,6 +237,11 @@
 	
 	docker build -t goalsapp:1 .   : to give name/tag any image while building. images has repo:tag format of naming. for detail see Understanding tag section.
 	
+	docker push mrinalkumarjha/node-goal-app:1 : push images to docker hub
+	docker login : to login before pushing
+	docker logout : to logout
+	docker pull mrinalkumarjha/node-goal-app:1 : pull images from docker hub.
+	
 	
 	
 	
@@ -332,7 +337,44 @@
 	
 	after this images is there in repo.
 	
+# Pulling images from docklerhub
+
+		docker pull mrinalkumarjha/node-goal-app:1
 	
 	
 	
 	
+# Managing data and working with volume.
+
+	We have three kind of data in our application .
+	
+		1> Application (source code) which is shipped in images . and images are read only.
+		
+		2> Then we have temporary data. like user input in application which stored in container as images is readonly. so when container layer is created 
+			with read/write access. these type of temp data stored in container layer.
+			
+		3> Then we have Permanent application Data. ex user account. these data need to be persists. these data must not lost if container is stopped or restart.
+			so we will store this data in container with help of VOLUME.
+			
+		
+# Problem in persisting data.
+	once container is removed data stored inside container is lost. we want to keep data stored with form even if container is deleted. so we will use
+	volume to store data and persisting.
+	
+# VOLUMES
+	
+	volumes are folder on your host machine hard drive which are mounted(made available, mapped) into container.
+	by volume we can connect folder inside container to outside of container like of host machine. and changes to either folder will be rreflected to other one.
+	
+	so by this way volumes persists data if a container is shut down. volume wont remove if container removed, it survive.
+	
+	A container can read data from volume and write to it.
+	
+	
+	
+	
+
+	
+		
+			
+		
