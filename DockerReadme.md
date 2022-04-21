@@ -213,12 +213,13 @@
 	docker run -p 8000:80 -d image_id : create new container based on some image. -d  is deattached mode(means we are not attached to container and any console.log kind of output will not appear in terminal)
 	docker run -p 3000:80 --rm image_id : by --rm it will automatically remove container once exit.
 	docker run -p 8000:80 --name goalsapp 485b13a7c43a : by running image with --name we can name a container which will be created based on image.
+	docker run -d -p 3000:80 --rm --name feedback-app -v feedback-vol:/app/feedback  feedback-node:volume : add named volume to container while running it.
 	
 	docker start container_name_or_id: start existing container in deattached mode by default. use this if there is not any source code change. because docker run will create new container each time.
 	docker start -a container_name_or_id: start existing container in attached mode by default.
 	docker stop container_name_or_id : stop running container.
 	docker attach container_name_or_id : to attach container to terminal(so that user can see logs and outputs , error from server)
-	docker logs container_name_or_id: to see logs of any container
+	docker logs container_name_or_id: to see logs of any container. if any exception comes we can use this command to see this.
 	docker logs -f container_name_or_id: to keep listning and see logs of any container(similar to attach mode)
 	
 	docker run -it ee21278214df : To enter in interactive mode(for python script. to enter enput and expect output)
@@ -242,6 +243,7 @@
 	docker logout : to logout
 	docker pull mrinalkumarjha/node-goal-app:1 : pull images from docker hub.
 	
+    docker volume ls : check volume 
 	
 	
 	
@@ -371,7 +373,38 @@
 	A container can read data from volume and write to it.
 	
 	
+# How to add volume to container ?
+
+	with volume there is two types of data storage 
 	
+	1. Volume: managed by docker: there is two types of volume. in both of the cases docker set a anonmus path to host machine when we specify
+				volume ["/app/feedback"]   instruction. we dont know exact path where it store our data.
+				we can see volume created using docker volume -l. this volume also deleted once container deleted.
+				
+			1> Anonymous volumes: data not survive in this case:
+			
+				one easy way to add instruction in docker file.
+	
+				volume ["/app/feedback"]   : /app/feedback  is path of inside container which we want to keep even container is deleted. data wont survive.
+		
+			2> named volume  : with named volume our folder will be survive.it is great for data which should be persist. but we wont be able to edit directly.
+								we cant create named volume inside docker file. we need to create named volume when we create container. see below.
+								here by -v vilumename:folder which needs to be survived inside container we created container.
+								
+		    
+				ex: docker run -d -p 3000:80 --rm --name feedback-app -v feedback-vol:/app/feedback  feedback-node:volume
+				
+				now even if we stop /delete container feedback will persist.
+				
+				check volume by : docker volume ls
+			
+	2. Bind mount : managed by us
+	
+	
+
+	
+		
+		
 	
 
 	
