@@ -400,10 +400,47 @@
 			
 	2. Bind mount : managed by us
 	
+		in above method we dont know where docker is persisting feedback coz it is managed by docker. but in bind mount method it is possible to specify
+		a path of our host machine where docker should persist the file.
+		
+		so if we put source code in bind mount container can read and write to volume . and that is why we dont have to rebuild image if source code change.
+		so bind mount is perfect for persistent and editable data .eg source code.
+		
+		we cant add mount functionality to docker file. following are step to bind mount
+		
+		1. add one more volume and specify absolute path not relative of our host machine where source code existing.
+		
+		docker run -d -p 3000:80 --rm --name feedback-app -v feedback-vol:/app/feedback   -v  "C:/Users/coolm/OneDrive/Desktop/data-volumes-01-starting-setup/:/app"  feedback-node:volume
+		
+		above command override files inside /app so container will crash as we overrided node modules also. to solve this we add another anonmus volumes
+		
+		docker run -d -p 3000:80 --rm --name feedback-app -v feedback-vol:/app/feedback -v  "C:/Users/coolm/OneDrive/Desktop/data-volumes-01-starting-setup/:/app"	-v  /app/node_modules feedback-node:volume
+		
+		now we get the benifit of instant change reflecting. any change in source code will reflect now.
+		
+		
+		
+		Just a quick note: If you don't always want to copy and use the full path, you can use these shortcuts:
+
+		macOS / Linux: -v $(pwd):/app
+
+		Windows: -v "%cd%":/app
 	
+	
+# Removing Anonymous Volumes
+
+	We saw, that anonymous volumes are removed automatically, when a container is removed.
+
+	This happens when you start / run a container with the --rm option.
+
+	If you start a container without that option, the anonymous volume would NOT be removed, even if you remove the container (with docker rm ...).
+
+	Still, if you then re-create and re-run the container (i.e. you run docker run ... again), a new anonymous volume will be created. So even though the anonymous volume wasn't removed automatically, it'll also not be helpful because a different anonymous volume is attached the next time the container starts (i.e. you removed the old container and run a new one).
+
+	Now you just start piling up a bunch of unused anonymous volumes - you can clear them via docker volume rm VOL_NAME or docker volume prune.
 
 	
-		
+	
 		
 	
 
